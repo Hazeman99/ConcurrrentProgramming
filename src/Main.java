@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.concurrent.Executor;
@@ -10,25 +11,26 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the connection game!");
 
+        //initializing scanner
         Scanner in = new Scanner(System.in);
 
         // Getting random points count (n)
-        System.out.print("Please type in count of random points: ");
-        int n = in.nextInt();
+        int n = readInt("Please type in count of random points: ");
 
         // Getting threads count (t)
-        System.out.print("Please type in count of threads: ");
-        int t = in.nextInt();
+        int t = readInt("Please type in count of threads: ");
 
         // Making sure thread count is less than random points count
         while (t > n){
             System.out.print("Please type count of threads (less than points): ");
-            t = in.nextInt();
+            t = readInt("Please type in count of threads: ");
         }
 
         // Getting number of seconds (m)
-        System.out.print("Please type in number of seconds: ");
-        int m = in.nextInt();
+        int m = readInt("Please type in number of seconds: ");
+
+        //terminating scanner after completion of inputs
+        in.close();
 
         // Initialize Game object which controls the game (random points generation & ArrayLists)
         Game game = new Game();
@@ -60,4 +62,24 @@ public class Main {
         System.out.println(game.getEdges().toString());
 
     }
+    public  static int readInt(String msg) {
+        boolean error = false;
+        int x = 0;
+        do {
+            try {
+                Scanner in = new Scanner(System.in);
+                System.out.print(msg);
+                x = in.nextInt();
+                error = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid Input value, Please Input Integer Only:");
+                error = true;
+            }
+        } while (error);
+
+        return (x);
+    }
+
 }
+
+
