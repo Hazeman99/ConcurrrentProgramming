@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -7,7 +6,7 @@ public class ConnectingEdges implements Runnable {
     private static Lock lock = new ReentrantLock();
     static int counter = 0;
 
-    // Game object to retrieve Coordinates and Edges ArrayLists
+    // Game object to retrieve Point and Edges ArrayLists
     Game game;
 
     public ConnectingEdges(Game gameObj) {
@@ -21,10 +20,10 @@ public class ConnectingEdges implements Runnable {
                 System.out.println("Thread attempted 20 times so it was stopped");
                 Thread.currentThread().interrupt();
             }
-            // Combine coordinates in edges (2 Coordinates in 1 Edge)
+            // Combine coordinates in edges (2 Point in 1 Edge)
             if (game.getSet().size() > 1) {
-                Coordinates coord1 = game.removeFirstSet();
-                Coordinates coord2 = game.removeFirstSet();
+                Point coord1 = game.shiftPoints();
+                Point coord2 = game.shiftPoints();
                 Edge edge1 = new Edge(coord1, coord2);
                 game.addEdge(edge1);
                 System.out.println(Thread.currentThread().getName() + ": Added " + coord1.toString() + " and " + coord2);

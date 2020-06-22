@@ -1,4 +1,4 @@
-public class Coordinates {
+public class Point {
     public double x_coordinate; // X coordinate point
     public double y_coordinate; // Y coordinate point
 
@@ -8,7 +8,7 @@ public class Coordinates {
      * @param x
      * @param y
      */
-    public Coordinates(double x, double y){
+    public Point(double x, double y){
         x_coordinate = x;
         y_coordinate = y;
     }

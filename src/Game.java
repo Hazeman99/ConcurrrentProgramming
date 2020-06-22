@@ -1,17 +1,15 @@
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
 public class Game {
-    ArrayList<Coordinates> set; // ArrayList of all generated Coordinates
+    ArrayList<Point> points; // ArrayList of all generated Point
     ArrayList<Edge> edges; // ArrayList of all connections/Edges
 
     /**
      * Constructor
      */
     public Game(){
-        set = new ArrayList<Coordinates>();
+        points = new ArrayList<Point>();
         edges = new ArrayList<Edge>();
     }
 
@@ -24,30 +22,25 @@ public class Game {
         Random r = new Random();
         double x;
         double y;
-        // Fill up the Coordinates ArrayList with random Coordinates
-        while (set.size() < numbers){
+        // Fill up the Point ArrayList with random Point
+        while (points.size() < numbers){
             // Generate x and y coordinates
             x = r.nextDouble() * 1000;
             y = r.nextDouble() * 1000;
 
-            // Initialize coordinate object with the x and y points
-            Coordinates c = new Coordinates(x, y);
+            // Initialize Point object with the x and y coordinates
+            Point currentPoint = new Point(x, y);
 
-            // If ArrayList does not include exact same coordinates then add to ArrayList
-            if (!set.contains(c)){
-                addSet(c);
+            // If ArrayList does not include exact same Point then add to ArrayList
+            if (!points.contains(currentPoint)){
+                points.add(currentPoint);
             }
         }
     }
 
-    // Add to Coordinates list
-    public void addSet(Coordinates c){
-        set.add(c);
-    }
-
-    // Remove and return first Coordinates set
-    public Coordinates removeFirstSet(){
-        return set.remove(0);
+    // do a points shift
+    public Point shiftPoints(){
+        return points.remove(0);
     }
 
     // Add Edge to ArrayList
@@ -55,9 +48,9 @@ public class Game {
         edges.add(e);
     }
 
-    // Get Coordinates ArrayList
-    public ArrayList<Coordinates> getSet(){
-        return set;
+    // Get Point ArrayList
+    public ArrayList<Point> getSet(){
+        return points;
     }
 
     // Get Edges ArrayList

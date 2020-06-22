@@ -1,6 +1,6 @@
 public class Edge {
-    Coordinates firstPoint; // First Coordinates Object
-    Coordinates secondPoint; // Second Coordinates Object
+    Point firstPoint; // First Point Object
+    Point secondPoint; // Second Point Object
 
     /**
      * Constructor
@@ -8,7 +8,7 @@ public class Edge {
      * @param first
      * @param second
      */
-    public Edge(Coordinates first, Coordinates second){
+    public Edge(Point first, Point second){
         firstPoint = first;
         secondPoint = second;
     }

@@ -21,7 +21,7 @@ public class Main {
         int t = readInt("Please type in count of threads: ");
 
         // Making sure thread count is less than random points count
-        while (t > n){
+        while (t > n) {
             System.out.print("Please type count of threads (less than points): ");
             t = readInt("Please type in count of threads: ");
         }
@@ -42,27 +42,28 @@ public class Main {
         ExecutorService executor = Executors.newFixedThreadPool(t);
 
         // Submit t number of tasks to ExecutorService
-        for (int i=0; i<n/2+1; i++){
+        for (int i = 0; i < n / 2 + 1; i++) {
             executor.submit(new ConnectingEdges(game));
         }
 
         // Terminate after m seconds
         try {
             executor.awaitTermination(m, TimeUnit.SECONDS);
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
         }
 
         // Close/Shutdown Executor
         executor.shutdown();
 
         // Display final results for points left and connections (Edges) made
-        System.out.println("Points Left ("+ game.getSet().size() +") ");
+        System.out.println("Points Left (" + game.getSet().size() + ") ");
         System.out.println(game.getSet().toString());
-        System.out.println("Points Connected ("+ game.getEdges().size() +") ");
+        System.out.println("Points Connected (" + game.getEdges().size() + ") ");
         System.out.println(game.getEdges().toString());
 
     }
-    public  static int readInt(String msg) {
+
+    public static int readInt(String msg) {
         boolean error = false;
         int x = 0;
         do {
@@ -70,7 +71,12 @@ public class Main {
                 Scanner in = new Scanner(System.in);
                 System.out.print(msg);
                 x = in.nextInt();
-                error = false;
+                if (0 >= x) {
+                    error = true;
+                    System.out.println("Please enter a positive number only");
+                } else {
+                    error = false;
+                }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid Input value, Please Input Integer Only:");
                 error = true;
