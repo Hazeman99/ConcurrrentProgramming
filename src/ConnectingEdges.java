@@ -33,7 +33,7 @@ public class ConnectingEdges implements Runnable {
                 System.out.println("There is only 1 coordinate left which has no free partner");
             } else {
                 // If 0 coordinate left to create edges then display below message
-                System.out.println("There is only no more coordinates to connect");
+                System.out.println("There is no more coordinates to connect");
             }
             counter++;
         } finally {
