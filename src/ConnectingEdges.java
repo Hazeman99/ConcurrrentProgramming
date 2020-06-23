@@ -35,9 +35,6 @@ public class ConnectingEdges implements Callable {
                 status.increaseCompletedTaskCountByOne();
                 status.setStatusCode("SUCCESS");
                 return status;
-//                System.out.println(Thread.currentThread().getName() + ": Added " + point1.toString() + " and " + point2);
-//            } else if (game.getPointsList().size() == 1) {
-//                status.increaseFailuresCountByOne();
             } else {
                 status.setStatusCode("FAIL");
                 status.increaseFailuresCountByOne();

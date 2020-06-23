@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -67,6 +68,11 @@ public class Main {
 
         printStatus(game, threadsStore);
 
+        EventQueue.invokeLater(() -> {
+
+            var ex = new Chart(game.getEdgesList());
+            ex.setVisible(true);
+        });
     }
 
     public static void printStatus(Game game, HashMap threadStore) {
@@ -74,12 +80,6 @@ public class Main {
         threadStore.forEach((k, v) -> {
             System.out.println(v);
         });
-
-        // Display final results for points left and connections (Edges) made
-//        System.out.println("Points Left (" + game.getPointsList().size() + ") ");
-//        System.out.println(game.getPointsList().toString());
-//        System.out.println("Points Connected (" + game.getEdgesList().size() + ") ");
-//        System.out.println(game.getEdgesList().toString());
     }
 
     public static int readInt(String msg) {
