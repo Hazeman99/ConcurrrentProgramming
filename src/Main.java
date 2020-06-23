@@ -20,6 +20,10 @@ public class Main {
         // Getting number of seconds (m)
         int m = readInt("Please type in number of seconds: ");
 
+//
+//        long start = System.currentTimeMillis();
+//        long end = start + m*1000;
+
         // Initialize Game object which controls the game (random points generation & ArrayLists)
         Game game = new Game();
 
@@ -32,8 +36,10 @@ public class Main {
 
         // Submit t number of tasks to ExecutorService
         for (int i = 0; i < n / 2 + 1; i++) {
+
             Future<ThreadStatus> f = executor.submit(new ConnectingEdges(game));
             try {
+
                 ThreadStatus ts = f.get();
                 String currentThreadName = ts.getThreadName();
 
@@ -54,16 +60,18 @@ public class Main {
 
                 if (threadsStore.get(currentThreadName).getFailuresCount() >= 20) {
                     // terminate after 20 failed attempts.
+                    System.out.println("A thread reached 20 failed attempts");
                     executor.shutdownNow();
                     break;
                 }
 
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
         executor.shutdown();
+
 
         printStatus(game, threadsStore);
 
