@@ -5,9 +5,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the connection game!");
 
-        //initializing scanner
-        Scanner in = new Scanner(System.in);
-
         // Getting random points count (n)
         int n = readInt("Please type in count of random points: ");
 
@@ -22,10 +19,6 @@ public class Main {
 
         // Getting number of seconds (m)
         int m = readInt("Please type in number of seconds: ");
-
-
-        //terminating scanner after completion of inputs
-        in.close();
 
 //         Initialize Game object which controls the game (random points generation & ArrayLists)
         Game game = new Game();
