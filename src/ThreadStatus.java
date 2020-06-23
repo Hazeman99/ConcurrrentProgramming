@@ -8,6 +8,7 @@ public class ThreadStatus {
     public String getThreadName() {
         return threadName;
     }
+   
 
     public void setThreadName(String threadName) {
         this.threadName = threadName;
