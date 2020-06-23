@@ -55,7 +55,7 @@ public class Main {
         System.out.println("Edges Created ("+ game.getEdges().size() +") ");
         System.out.println(game.getEdges().toString());
 
-    }
+    }//To validate the input
     public  static int readInt(String msg) {
         boolean error = false;
         int x = 0;
