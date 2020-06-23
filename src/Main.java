@@ -11,9 +11,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the connection game!");
 
-        //initializing scanner
-        Scanner in = new Scanner(System.in);
-
         // Getting random points count (n)
         int n = readInt("Please type in count of random points: ");
 
