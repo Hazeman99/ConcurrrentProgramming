@@ -20,10 +20,6 @@ public class Main {
         // Getting number of seconds (m)
         int m = readInt("Please type in number of seconds: ");
 
-//
-//        long start = System.currentTimeMillis();
-//        long end = start + m*1000;
-
         // Initialize Game object which controls the game (random points generation & ArrayLists)
         Game game = new Game();
 
@@ -43,8 +39,9 @@ public class Main {
                 ThreadStatus ts = f.get();
                 String currentThreadName = ts.getThreadName();
 
-                if (threadsStore.containsKey(currentThreadName)) {
+                if (threadsStore.containsKey(currentThreadName)) { // check if the current thread name already exist in the hashmap
 
+                    // if Exist, update it's value accordingly (either by increasing the success times, or failure times base on the returned status code)
                     ThreadStatus currentThreadStatus = threadsStore.get(currentThreadName);
 
                     if (ts.getStatusCode() == "SUCCESS") {
@@ -55,6 +52,7 @@ public class Main {
                     threadsStore.put(currentThreadName, currentThreadStatus);
 
                 } else {
+                    // if not exist in the hashmap, add it.
                     threadsStore.put(currentThreadName, ts);
                 }
 
@@ -84,10 +82,10 @@ public class Main {
         });
 
         // Display final results for points left and connections (Edges) made
-//        System.out.println("Points Left (" + game.getPointsList().size() + ") ");
-//        System.out.println(game.getPointsList().toString());
-//        System.out.println("Points Connected (" + game.getEdgesList().size() + ") ");
-//        System.out.println(game.getEdgesList().toString());
+        // System.out.println(game.getPointsList().toString());
+        // System.out.println("Points Connected (" + game.getEdgesList().size() + ") ");
+        // System.out.println(game.getEdgesList().toString());
+        // System.out.println("Points Left (" + game.getPointsList().size() + ") ");
     }
 
     public static int readInt(String msg) {
