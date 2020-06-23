@@ -41,7 +41,6 @@ public class Game {
     public Point getRandomPoint(){
         int index = r.nextInt(points.size());
         Point point = points.get(index);
-//        points.removeIf(p -> p.equals(point));
         points.remove(index);
         return point;
     }

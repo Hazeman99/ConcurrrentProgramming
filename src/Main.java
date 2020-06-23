@@ -5,9 +5,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to the connection game!");
 
-        //initializing scanner
-        Scanner in = new Scanner(System.in);
-
         // Getting random points count (n)
         int n = readInt("Please type in count of random points: ");
 
@@ -24,21 +21,18 @@ public class Main {
         int m = readInt("Please type in number of seconds: ");
 
 
-        //terminating scanner after completion of inputs
-        in.close();
-
-//         Initialize Game object which controls the game (random points generation & ArrayLists)
+        // Initialize Game object which controls the game (random points generation & ArrayLists)
         Game game = new Game();
 
-//         Start game and add user-collected numbers
+        // Start game and add user-collected numbers
         game.startGame(n);
 
-//         Create t threads using ExecutorService
+        // Create t threads using ExecutorService
         ExecutorService executor = Executors.newFixedThreadPool(t);
         HashMap<String, ThreadStatus> threadsStore = new HashMap<String, ThreadStatus>();
+
         // Submit t number of tasks to ExecutorService
         for (int i = 0; i < n / 2 + 1; i++) {
-
             Future<ThreadStatus> f = executor.submit(new ConnectingEdges(game));
             try {
                 ThreadStatus ts = f.get();
@@ -61,18 +55,16 @@ public class Main {
 
                 if (threadsStore.get(currentThreadName).getFailuresCount() >= 20) {
                     // terminate after 20 failed attempts.
-//                    executor.shutdownNow();
+                    executor.shutdownNow();
+                    break;
 //                    executor.awaitTermination(1, TimeUnit.NANOSECONDS);
                 }
 
-            } catch (InterruptedException e) {
-                System.out.println("REACHED HERE 1"+e.getMessage());
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                System.out.println("REACHED HERE 2"+e.getMessage());
+            } catch (Exception e){
                 e.printStackTrace();
             }
         }
+
         executor.shutdown();
 
         printStatus(game, threadsStore);
@@ -81,7 +73,7 @@ public class Main {
 
     public static void printStatus(Game game, HashMap threadStore) {
 
-        threadStore.forEach((k,v) -> {
+        threadStore.forEach((k, v) -> {
             System.out.println(v);
         });
 
@@ -111,7 +103,6 @@ public class Main {
                 error = true;
             }
         } while (error);
-
         return (x);
     }
 
