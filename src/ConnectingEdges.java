@@ -18,14 +18,6 @@ public class ConnectingEdges implements Callable {
         status.setThreadName(Thread.currentThread().getName());
         lock.lock();
         try {
-            if (status.getFailuresCount() == 20) {
-                System.out.println("REACHED THIS ERROR 20/CONNECTINGEDGES");
-                System.out.println(Thread.currentThread().getName()+" 20 times so it was stopped");
-                //TODO:// we should not only terminaate the thread!, but terminate the whole app!.
-                Thread.currentThread().interrupt();
-                status.setStatusCode("20-ATTEMPTS-FAIL");
-                return status;
-            }
             // Form an edge using 2 Points
             if (game.getPointsList().size() > 1) {
                 Point point1 = game.getRandomPoint();

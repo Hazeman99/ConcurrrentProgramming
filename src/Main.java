@@ -26,8 +26,11 @@ public class Main {
         // Start game and add user-collected numbers
         game.startGame(n);
 
+
+
         // Create t threads using ExecutorService
         ExecutorService executor = Executors.newFixedThreadPool(t);
+
         HashMap<String, ThreadStatus> threadsStore = new HashMap<String, ThreadStatus>();
 
         // Submit t number of tasks to ExecutorService
