@@ -26,9 +26,6 @@ public class Main {
         // Getting number of seconds (m)
         int m = readInt("Please type in number of seconds: ");
 
-        //terminating scanner after completion of inputs
-        in.close();
-
         // Initialize Game object which controls the game (random points generation & ArrayLists)
         Game game = new Game();
 
