@@ -1,11 +1,5 @@
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
+import java.util.concurrent.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -29,38 +23,73 @@ public class Main {
         // Getting number of seconds (m)
         int m = readInt("Please type in number of seconds: ");
 
+
         //terminating scanner after completion of inputs
         in.close();
 
-        // Initialize Game object which controls the game (random points generation & ArrayLists)
+//         Initialize Game object which controls the game (random points generation & ArrayLists)
         Game game = new Game();
 
-        // Start game and add user-collected numbers
+//         Start game and add user-collected numbers
         game.startGame(n);
 
-        // Create t threads using ExecutorService
+//         Create t threads using ExecutorService
         ExecutorService executor = Executors.newFixedThreadPool(t);
-
+        HashMap<String, ThreadStatus> threadsStore = new HashMap<String, ThreadStatus>();
         // Submit t number of tasks to ExecutorService
         for (int i = 0; i < n / 2 + 1; i++) {
-            executor.submit(new ConnectingEdges(game));
-        }
 
-        // Terminate after m seconds
-        try {
-            executor.awaitTermination(m, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-        }
+            Future<ThreadStatus> f = executor.submit(new ConnectingEdges(game));
+            try {
+                ThreadStatus ts = f.get();
+                String currentThreadName = ts.getThreadName();
 
-        // Close/Shutdown Executor
+                if (threadsStore.containsKey(currentThreadName)) {
+
+                    ThreadStatus currentThreadStatus = threadsStore.get(currentThreadName);
+
+                    if (ts.getStatusCode() == "SUCCESS") {
+                        currentThreadStatus.increaseCompletedTaskCountByOne();
+                    } else {
+                        currentThreadStatus.increaseFailuresCountByOne();
+                    }
+                    threadsStore.put(currentThreadName, currentThreadStatus);
+
+                } else {
+                    threadsStore.put(currentThreadName, ts);
+                }
+
+                if (threadsStore.get(currentThreadName).getFailuresCount() >= 20) {
+                    // terminate after 20 failed attempts.
+//                    executor.shutdownNow();
+//                    executor.awaitTermination(1, TimeUnit.NANOSECONDS);
+                }
+
+            } catch (InterruptedException e) {
+                System.out.println("REACHED HERE 1"+e.getMessage());
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                System.out.println("REACHED HERE 2"+e.getMessage());
+                e.printStackTrace();
+            }
+        }
         executor.shutdown();
 
-        // Display final results for points left and connections (Edges) made
-        System.out.println("Points Left (" + game.getSet().size() + ") ");
-        System.out.println(game.getSet().toString());
-        System.out.println("Points Connected (" + game.getEdges().size() + ") ");
-        System.out.println(game.getEdges().toString());
+        printStatus(game, threadsStore);
 
+    }
+
+    public static void printStatus(Game game, HashMap threadStore) {
+
+        threadStore.forEach((k,v) -> {
+            System.out.println(v);
+        });
+
+        // Display final results for points left and connections (Edges) made
+//        System.out.println("Points Left (" + game.getPointsList().size() + ") ");
+//        System.out.println(game.getPointsList().toString());
+//        System.out.println("Points Connected (" + game.getEdgesList().size() + ") ");
+//        System.out.println(game.getEdgesList().toString());
     }
 
     public static int readInt(String msg) {
@@ -87,5 +116,3 @@ public class Main {
     }
 
 }
-
-

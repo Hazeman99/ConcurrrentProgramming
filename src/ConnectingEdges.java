@@ -1,11 +1,11 @@
+import java.util.concurrent.Callable;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ConnectingEdges implements Runnable {
+public class ConnectingEdges implements Callable {
     // Lock for when creating Edges
     private static Lock lock = new ReentrantLock();
-    static int counter = 0;
-
+    ThreadStatus status =  new ThreadStatus();
     // Game object to retrieve Point and Edges ArrayLists
     Game game;
 
@@ -13,34 +13,41 @@ public class ConnectingEdges implements Runnable {
         game = gameObj;
     }
 
-    public void run() {
+    @Override
+    public ThreadStatus call() throws Exception {
+        status.setThreadName(Thread.currentThread().getName());
         lock.lock();
         try {
-            if (counter == 20) {
-                System.out.println("Thread attempted 20 times so it was stopped");
+            if (status.getFailuresCount() == 20) {
+                System.out.println("REACHED THIS ERROR 20/CONNECTINGEDGES");
+                System.out.println(Thread.currentThread().getName()+" 20 times so it was stopped");
+                //TODO:// we should not only terminaate the thread!, but terminate the whole app!.
                 Thread.currentThread().interrupt();
+                status.setStatusCode("20-ATTEMPTS-FAIL");
+                return status;
             }
-            // Combine coordinates in edges (2 Point in 1 Edge)
-            if (game.getSet().size() > 1) {
-                Point coord1 = game.shiftPoints();
-                Point coord2 = game.shiftPoints();
-                Edge edge1 = new Edge(coord1, coord2);
-                game.addEdge(edge1);
-                System.out.println(Thread.currentThread().getName() + ": Added " + coord1.toString() + " and " + coord2);
-            } else if (game.getSet().size() == 1) {
-                // If 1 coordinate left with no partner then display below message
-                System.out.println("There is only 1 coordinate left which has no free partner");
+            // Form an edge using 2 Points
+            if (game.getPointsList().size() > 1) {
+                Point point1 = game.getRandomPoint();
+                Point point2 = game.getRandomPoint();
+                Edge currentEdge = new Edge(point1, point2);
+                game.pushNewEdgeToCurrentEdges(currentEdge);
+                status.increaseCompletedTaskCountByOne();
+                status.setStatusCode("SUCCESS");
+                return status;
+//                System.out.println(Thread.currentThread().getName() + ": Added " + point1.toString() + " and " + point2);
+//            } else if (game.getPointsList().size() == 1) {
+//                status.increaseFailuresCountByOne();
             } else {
-                // If 0 coordinate left to create edges then display below message
-                System.out.println("There is only no more coordinates to connect");
+                status.setStatusCode("FAIL");
+                status.increaseFailuresCountByOne();
             }
-            counter++;
         } catch (Exception e) {
             e.printStackTrace();
 
         } finally {
-
             lock.unlock();
+            return status;
         }
     }
 }

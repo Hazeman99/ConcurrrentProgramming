@@ -4,6 +4,7 @@ import java.util.Random;
 public class Game {
     ArrayList<Point> points; // ArrayList of all generated Point
     ArrayList<Edge> edges; // ArrayList of all connections/Edges
+    Random r = new Random();
 
     /**
      * Constructor
@@ -19,7 +20,6 @@ public class Game {
      * @param numbers
      */
     public void startGame(int numbers) {
-        Random r = new Random();
         double x;
         double y;
         // Fill up the Point ArrayList with random Point
@@ -38,23 +38,26 @@ public class Game {
         }
     }
 
-    // do a points shift
-    public Point shiftPoints(){
-        return points.remove(0);
+    public Point getRandomPoint(){
+        int index = r.nextInt(points.size());
+        Point point = points.get(index);
+//        points.removeIf(p -> p.equals(point));
+        points.remove(index);
+        return point;
     }
 
     // Add Edge to ArrayList
-    public void addEdge(Edge e){
+    public void pushNewEdgeToCurrentEdges(Edge e){
         edges.add(e);
     }
 
     // Get Point ArrayList
-    public ArrayList<Point> getSet(){
+    public ArrayList<Point> getPointsList(){
         return points;
     }
 
     // Get Edges ArrayList
-    public ArrayList<Edge> getEdges(){
+    public ArrayList<Edge> getEdgesList(){
         return edges;
     }
 }
