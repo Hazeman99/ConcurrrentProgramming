@@ -1,4 +1,10 @@
 public class ThreadStatus {
+
+    private String threadName;
+    private String statusCode;
+    private int completedTasksCount=0;
+    private int failuresCount=0;
+
     public String getThreadName() {
         return threadName;
     }
@@ -7,11 +13,6 @@ public class ThreadStatus {
         this.threadName = threadName;
     }
 
-    private String threadName;
-    private String statusCode;
-    private int completedTasksCount=0;
-    private int failuresCount=0;
-
     public int getFailuresCount() {
         return failuresCount;
     }
@@ -19,11 +20,7 @@ public class ThreadStatus {
     public void increaseFailuresCountByOne() {
         this.failuresCount++;
     }
-//    public ThreadStatus(String statusCode, int completedTasksCount) {
-//        this.statusCode = statusCode;
-//        this.completedTasksCount = completedTasksCount;
-//    }
-
+    
     public String getStatusCode() {
         return statusCode;
     }

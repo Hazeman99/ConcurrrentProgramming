@@ -57,7 +57,6 @@ public class Main {
                     // terminate after 20 failed attempts.
                     executor.shutdownNow();
                     break;
-//                    executor.awaitTermination(1, TimeUnit.NANOSECONDS);
                 }
 
             } catch (Exception e){
