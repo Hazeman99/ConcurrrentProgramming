@@ -58,7 +58,7 @@ public class Main {
         // Display final results for points left and connections (Edges) made
         System.out.println("Points Left ("+ game.getSet().size() +") ");
         System.out.println(game.getSet().toString());
-        System.out.println("Points Connected ("+ game.getEdges().size() +") ");
+        System.out.println("Edges Created ("+ game.getEdges().size() +") ");
         System.out.println(game.getEdges().toString());
 
     }
