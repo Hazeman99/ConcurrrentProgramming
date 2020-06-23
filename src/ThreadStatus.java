@@ -20,7 +20,7 @@ public class ThreadStatus {
     public void increaseFailuresCountByOne() {
         this.failuresCount++;
     }
-    
+
     public String getStatusCode() {
         return statusCode;
     }
