@@ -1,5 +1,10 @@
-public class ThreadStatus {
 
+/*
+ * ThreadStatus Object will be used to preserve each thread "status" across reuses from the executor service.
+ */
+
+public class ThreadStatus {
+    //
     private String threadName;
     private String statusCode;
     private int completedTasksCount=0;
