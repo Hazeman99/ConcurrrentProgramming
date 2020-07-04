@@ -1,4 +1,7 @@
+import javax.swing.*;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Random;
 
 public class Game {
@@ -22,6 +25,10 @@ public class Game {
     public void startGame(int numbers) {
         double x;
         double y;
+        JFrame frame = new JFrame("Points Details");
+        StringBuilder all = new StringBuilder("<html>");
+        JLabel label = new JLabel();
+
         // Fill up the Point ArrayList with random Point
         while (points.size() < numbers){
             // Generate x and y coordinates
@@ -33,9 +40,16 @@ public class Game {
 
             // If ArrayList does not include exact same Point then add to ArrayList
             if (!points.contains(currentPoint)){
+                all.append(currentPoint.toString());
+                all.append("<br/><br/>");
                 points.add(currentPoint);
             }
         }
+        all.append("</html>");
+        label.setText(all.toString());
+        frame.add(label);
+        frame.setSize(1000, 400);
+        frame.setVisible(true);
     }
 
     public Point getRandomPoint(){

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CPGroupProject:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -19,7 +24,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61b3deb2-65d1-4d4a-bb0f-60b3f666c407" name="Default Changelist" comment="" />
+    <list default="true" id="61b3deb2-65d1-4d4a-bb0f-60b3f666c407" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/CPGroupProject_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_jfree_jfreechart_1_5_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPGroupProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CPGroupProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CPGroupProject/ConnectingEdges.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CPGroupProject/ConnectingEdges.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CPGroupProject/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,13 +59,27 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jfreechart-1.5.0-javadoc.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.GUI">
     <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Demo" />
+      <module name="CPGroupProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GUI" />
       <module name="CPGroupProject" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,6 +107,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GUI" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Unnamed" />
         <item itemvalue="Application.Demo" />
@@ -106,41 +138,54 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="52" y="27" width="589" height="705" key="#Unnamed" timestamp="1592752369050">
       <screen x="0" y="27" width="1366" height="705" />
     </state>
     <state x="52" y="27" width="589" height="705" key="#Unnamed/0.27.1366.705@0.27.1366.705" timestamp="1592752369050" />
-    <state x="143" y="-75" width="568" height="559" key="#com.intellij.ide.util.MemberChooser" timestamp="1592877136349">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="143" y="-75" width="568" height="559" key="#com.intellij.ide.util.MemberChooser/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592877136349" />
-    <state x="108" y="84" key="#com.intellij.ide.util.MemberChooser/0.27.1366.705@0.27.1366.705" timestamp="1592756734848" />
-    <state x="129" y="138" key="FileChooserDialogImpl" timestamp="1591655482409">
+    <state x="108" y="84" width="568" height="559" key="#com.intellij.ide.util.MemberChooser" timestamp="1593836045349">
       <screen x="0" y="27" width="1366" height="705" />
     </state>
-    <state x="129" y="138" key="FileChooserDialogImpl/0.27.1366.705@0.27.1366.705" timestamp="1591655482409" />
-    <state width="1878" height="247" key="GridCell.Tab.0.bottom" timestamp="1592907251888">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="143" y="-75" width="568" height="559" key="#com.intellij.ide.util.MemberChooser/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592877136349" />
+    <state x="108" y="84" key="#com.intellij.ide.util.MemberChooser/0.27.1366.705@0.27.1366.705" timestamp="1593836045349" />
+    <state x="421" y="173" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1592924587862">
+      <screen x="0" y="27" width="1366" height="705" />
+    </state>
+    <state x="421" y="173" key="#com.intellij.ide.util.TreeClassChooserDialog/0.27.1366.705@0.27.1366.705" timestamp="1592924587862" />
+    <state x="4" y="27" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593837122616">
+      <screen x="0" y="27" width="1366" height="705" />
+    </state>
+    <state x="4" y="27" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1366.705@0.27.1366.705" timestamp="1593837122616" />
+    <state x="421" y="129" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593838749522">
+      <screen x="0" y="27" width="1366" height="705" />
+    </state>
+    <state x="421" y="129" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1366.705@0.27.1366.705" timestamp="1593838749522" />
+    <state x="129" y="138" key="FileChooserDialogImpl" timestamp="1592912404956">
+      <screen x="0" y="27" width="1366" height="705" />
+    </state>
+    <state x="129" y="138" key="FileChooserDialogImpl/0.27.1366.705@0.27.1366.705" timestamp="1592912404956" />
+    <state width="1320" height="171" key="GridCell.Tab.0.bottom" timestamp="1593841301924">
+      <screen x="0" y="27" width="1366" height="705" />
     </state>
     <state width="1878" height="247" key="GridCell.Tab.0.bottom/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592907251888" />
-    <state width="637" height="171" key="GridCell.Tab.0.bottom/0.27.1366.705@0.27.1366.705" timestamp="1592840153374" />
-    <state width="1878" height="247" key="GridCell.Tab.0.center" timestamp="1592907251888">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1320" height="171" key="GridCell.Tab.0.bottom/0.27.1366.705@0.27.1366.705" timestamp="1593841301924" />
+    <state width="1320" height="171" key="GridCell.Tab.0.center" timestamp="1593841301924">
+      <screen x="0" y="27" width="1366" height="705" />
     </state>
     <state width="1878" height="247" key="GridCell.Tab.0.center/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592907251888" />
-    <state width="637" height="171" key="GridCell.Tab.0.center/0.27.1366.705@0.27.1366.705" timestamp="1592840153373" />
-    <state width="1878" height="247" key="GridCell.Tab.0.left" timestamp="1592907251888">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1320" height="171" key="GridCell.Tab.0.center/0.27.1366.705@0.27.1366.705" timestamp="1593841301924" />
+    <state width="1320" height="171" key="GridCell.Tab.0.left" timestamp="1593841301924">
+      <screen x="0" y="27" width="1366" height="705" />
     </state>
     <state width="1878" height="247" key="GridCell.Tab.0.left/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592907251888" />
-    <state width="637" height="171" key="GridCell.Tab.0.left/0.27.1366.705@0.27.1366.705" timestamp="1592840153373" />
-    <state width="1878" height="247" key="GridCell.Tab.0.right" timestamp="1592907251888">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1320" height="171" key="GridCell.Tab.0.left/0.27.1366.705@0.27.1366.705" timestamp="1593841301924" />
+    <state width="1320" height="171" key="GridCell.Tab.0.right" timestamp="1593841301924">
+      <screen x="0" y="27" width="1366" height="705" />
     </state>
     <state width="1878" height="247" key="GridCell.Tab.0.right/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592907251888" />
-    <state width="637" height="171" key="GridCell.Tab.0.right/0.27.1366.705@0.27.1366.705" timestamp="1592840153373" />
+    <state width="1320" height="171" key="GridCell.Tab.0.right/0.27.1366.705@0.27.1366.705" timestamp="1593841301924" />
     <state width="1878" height="367" key="GridCell.Tab.1.bottom" timestamp="1592887895073">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -161,18 +206,30 @@
     </state>
     <state width="1878" height="367" key="GridCell.Tab.1.right/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592887895073" />
     <state width="1320" height="213" key="GridCell.Tab.1.right/0.27.1366.705@0.27.1366.705" timestamp="1591723163284" />
+    <state x="171" y="27" key="SettingsEditor" timestamp="1592924617878">
+      <screen x="0" y="27" width="1366" height="705" />
+    </state>
+    <state x="171" y="27" key="SettingsEditor/0.27.1366.705@0.27.1366.705" timestamp="1592924617878" />
+    <state x="391" y="274" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1592917175299">
+      <screen x="0" y="27" width="1366" height="705" />
+    </state>
+    <state x="391" y="274" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.27.1366.705@0.27.1366.705" timestamp="1592917175299" />
     <state x="152" y="296" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592752386545">
       <screen x="0" y="27" width="1366" height="705" />
     </state>
     <state x="152" y="296" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1366.705@0.27.1366.705" timestamp="1592752386545" />
+    <state x="322" y="27" width="712" height="704" key="new project wizard" timestamp="1593561277521">
+      <screen x="0" y="27" width="1366" height="705" />
+    </state>
+    <state x="322" y="27" width="712" height="704" key="new project wizard/0.27.1366.705@0.27.1366.705" timestamp="1593561277521" />
     <state x="7" y="214" key="run.anything.popup" timestamp="1592873232034">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="7" y="214" key="run.anything.popup/0.1133.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1592873232034" />
     <state x="5" y="167" key="run.anything.popup/0.27.1366.705@0.27.1366.705" timestamp="1592757184750" />
-    <state x="4" y="53" width="672" height="678" key="search.everywhere.popup" timestamp="1592677848858">
+    <state x="4" y="53" width="672" height="678" key="search.everywhere.popup" timestamp="1593833251558">
       <screen x="0" y="27" width="1366" height="705" />
     </state>
-    <state x="4" y="53" width="672" height="678" key="search.everywhere.popup/0.27.1366.705@0.27.1366.705" timestamp="1592677848858" />
+    <state x="4" y="53" width="672" height="678" key="search.everywhere.popup/0.27.1366.705@0.27.1366.705" timestamp="1593833251558" />
   </component>
 </project>

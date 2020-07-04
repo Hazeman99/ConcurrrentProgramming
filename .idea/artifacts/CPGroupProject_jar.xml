@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CPGroupProject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CPGroupProject_jar</output-path>
+    <root id="archive" name="CPGroupProject.jar">
+      <element id="module-output" name="CPGroupProject" />
+      <element id="library" level="project" name="jfreechart-1.5.0-javadoc" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jfreechart-1.5.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
