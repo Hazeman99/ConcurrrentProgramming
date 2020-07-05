@@ -24,6 +24,7 @@ public class ConnectingEdges implements Callable {
                 Point point2 = game.getRandomPoint();
                 Edge currentEdge = new Edge(point1, point2);
                 game.pushNewEdgeToCurrentEdges(currentEdge);
+                System.out.println(currentEdge.toString());
                 status.increaseCompletedTaskCountByOne();
                 status.setStatusCode("SUCCESS");
                 return status;
