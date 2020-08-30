@@ -47,7 +47,7 @@ public class Main {
         }
 
         // Close/Shutdown Executor
-        executor.shutdown();
+        executor.shutdownNow();
 
         // Display final results for points left and connections (Edges) made
         System.out.println("Points Left ("+ game.getSet().size() +") ");
